@@ -44,6 +44,7 @@ export default antfu(
           multiline: 1,
         },
       ],
+      'import/no-duplicates': 'off',
     },
   },
 );

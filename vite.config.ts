@@ -6,6 +6,7 @@ import Vue from '@vitejs/plugin-vue';
 import tailwindcss from 'tailwindcss';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
+import VueRouter from 'unplugin-vue-router/vite';
 import { defineConfig, loadEnv } from 'vite';
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
@@ -14,6 +15,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     base: `/${env.VITE_APP_ROUTER_PREFIX}`,
     resolve: { alias: { '@': `${path.resolve(__dirname, 'src')}` } },
     plugins: [
+      VueRouter({}),
       Vue(),
       AutoImport({
         imports: ['vue', 'vue-router', '@vueuse/core', 'pinia'],
